@@ -1,5 +1,8 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:animate_do/animate_do.dart';
 import 'package:shop_app/screens/home/home_screen.dart';
 import 'package:shop_app/screens/profile/profile_screen.dart';
 
@@ -7,16 +10,15 @@ import '../constants.dart';
 import '../enums.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
-  const CustomBottomNavBar({
+  CustomBottomNavBar({
     Key key,
     @required this.selectedMenu,
   }) : super(key: key);
 
   final MenuState selectedMenu;
-
+  final Color inActiveIconColor = Color(0xFFB6B6B6);
   @override
   Widget build(BuildContext context) {
-    final Color inActiveIconColor = Color(0xFFB6B6B6);
     return Container(
       padding: EdgeInsets.symmetric(vertical: 14),
       decoration: BoxDecoration(
@@ -33,41 +35,60 @@ class CustomBottomNavBar extends StatelessWidget {
           topRight: Radius.circular(40),
         ),
       ),
-      child: SafeArea(
-          top: false,
+      child: Container(
+          // top: false,
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/Shop Icon.svg",
-                  color: MenuState.home == selectedMenu
-                      ? kPrimaryColor
-                      : inActiveIconColor,
-                ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, HomeScreen.routeName),
-              ),
-              IconButton(
-                icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-                onPressed: () {},
-              ),
-              IconButton(
-                icon: SvgPicture.asset(
-                  "assets/icons/User Icon.svg",
-                  color: MenuState.profile == selectedMenu
-                      ? kPrimaryColor
-                      : inActiveIconColor,
-                ),
-                onPressed: () =>
-                    Navigator.pushNamed(context, ProfileScreen.routeName),
-              ),
-            ],
-          )),
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          IconButton(
+            icon: SvgPicture.asset(
+              "assets/icons/Shop Icon.svg",
+              color: MenuState.home == selectedMenu
+                  ? kPrimaryColor
+                  : inActiveIconColor,
+            ),
+            onPressed: () => Navigator.pushNamed(context, HomeScreen.routeName),
+          ),
+          IconButton(
+            icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: SvgPicture.asset(
+              "assets/icons/User Icon.svg",
+              color: MenuState.profile == selectedMenu
+                  ? kPrimaryColor
+                  : inActiveIconColor,
+            ),
+            onPressed: () =>
+                Navigator.pushNamed(context, ProfileScreen.routeName),
+          ),
+        ],
+      )),
     );
   }
+}
+
+Widget getFloatingActionButton() {
+  return ZoomIn(
+    duration: Duration(milliseconds: 100),
+    child: Container(
+      margin: EdgeInsets.all(10),
+      height: 55,
+      width: 55,
+      decoration: BoxDecoration(color: kPrimaryColor, shape: BoxShape.circle),
+      child: Padding(
+        padding: const EdgeInsets.all(10.0),
+        child: Icon(
+          Icons.qr_code,
+          size: 30,
+          color: Colors.white,
+        ),
+      ),
+    ),
+  );
 }
