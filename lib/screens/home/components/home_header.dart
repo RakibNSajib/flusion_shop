@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:shop_app/constants.dart';
 import 'package:shop_app/screens/cart/cart_screen.dart';
 
 import '../../../size_config.dart';
@@ -6,7 +8,9 @@ import 'icon_btn_with_counter.dart';
 import 'search_field.dart';
 
 class HomeHeader extends StatelessWidget {
-  const HomeHeader({
+  var white;
+
+  HomeHeader({
     Key key,
   }) : super(key: key);
 
@@ -19,14 +23,28 @@ class HomeHeader extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           SearchField(),
-          IconBtnWithCounter(
-            svgSrc: "assets/icons/cart.svg",
-            press: () => Navigator.pushNamed(context, CartScreen.routeName),
-          ),
-          IconBtnWithCounter(
-            svgSrc: "assets/icons/chat.svg",
-            numOfitem: 2,
-            press: () {},
+          // IconBtnWithCounter(
+          //   svgSrc: "assets/icons/cart.svg",
+          //   press: () => Navigator.pushNamed(context, CartScreen.routeName),
+          // ),
+          // IconBtnWithCounter(
+          //   svgSrc: "assets/icons/chat.svg",
+          //   numOfitem: 2,
+          //   press: () {},
+          // ),
+          Container(
+            height: 45,
+            width: 45,
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(15),
+              color: kPrimaryColor,
+            ),
+            child: SvgPicture.asset(
+              "assets/icons/filter.svg",
+              height: 24,
+              color: Colors.white,
+            ),
           ),
         ],
       ),

@@ -20,6 +20,7 @@ class CustomBottomNavBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 65,
       padding: EdgeInsets.symmetric(vertical: 14),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -27,7 +28,7 @@ class CustomBottomNavBar extends StatelessWidget {
           BoxShadow(
             offset: Offset(0, -15),
             blurRadius: 20,
-            color: Color(0xFFDADADA).withOpacity(0.15),
+            color: Color.fromARGB(255, 94, 91, 91).withOpacity(0.15),
           ),
         ],
         borderRadius: BorderRadius.only(
@@ -53,6 +54,9 @@ class CustomBottomNavBar extends StatelessWidget {
             icon: SvgPicture.asset("assets/icons/Heart Icon.svg"),
             onPressed: () {},
           ),
+          SizedBox(
+            width: 20,
+          ),
           IconButton(
             icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
             onPressed: () {},
@@ -71,24 +75,6 @@ class CustomBottomNavBar extends StatelessWidget {
       )),
     );
   }
-}
 
-Widget getFloatingActionButton() {
-  return ZoomIn(
-    duration: Duration(milliseconds: 100),
-    child: Container(
-      margin: EdgeInsets.all(10),
-      height: 55,
-      width: 55,
-      decoration: BoxDecoration(color: kPrimaryColor, shape: BoxShape.circle),
-      child: Padding(
-        padding: const EdgeInsets.all(10.0),
-        child: Icon(
-          Icons.qr_code,
-          size: 30,
-          color: Colors.white,
-        ),
-      ),
-    ),
-  );
+
 }
