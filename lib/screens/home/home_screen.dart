@@ -44,15 +44,15 @@ class _HomeScreenState extends State<HomeScreen> {
       preferredSize: Size.fromHeight(75),
       child: SafeArea(
         child: Padding(
-          padding: EdgeInsets.only(top: 10, left: 20, right: 10, bottom: 10),
+          padding: EdgeInsets.only(top: 10, left: 18, right: 10, bottom: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
                 children: [
                   Image(
-                    image: AssetImage('assets/images/parki.png'),
-                    width: 80,
+                    image: AssetImage('assets/images/lg1.png'),
+                    width: 85,
                   ),
                 ],
               ),

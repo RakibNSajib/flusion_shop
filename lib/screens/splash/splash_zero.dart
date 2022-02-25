@@ -16,7 +16,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    Timer(Duration(seconds: 5), () {
+    Timer(Duration(seconds: 3), () {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => SplashScreen()));
     });
@@ -26,7 +26,12 @@ class _SplashPageState extends State<SplashPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Center(child: Image.asset('assets/images/logo.png')),
+      body: Image.asset(
+        'assets/images/splash4.png',
+        width: double.infinity,
+        height: double.infinity,
+        fit: BoxFit.cover,
+      ),
     );
   }
 }

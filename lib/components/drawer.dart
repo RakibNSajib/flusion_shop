@@ -4,6 +4,7 @@ import 'package:shop_app/components/coustom_bottom_nav_bar.dart';
 import 'package:shop_app/enums.dart';
 import 'package:animate_do/animate_do.dart';
 import '../../util/drawer_json.dart';
+import '../screens/sign_in/sign_in_screen.dart';
 
 bool isNotify = true;
 int selectedIndex = 0;
@@ -87,6 +88,8 @@ class _getDrawerState extends State<getDrawer> {
                             ? Switch(
                                 value: isNotify,
                                 onChanged: (value) {
+                                  // Navigator.pushNamed(
+                                  //     context, SignInScreen.routeName);
                                   setState(() {
                                     isNotify = value;
                                   });
@@ -109,9 +112,15 @@ class _getDrawerState extends State<getDrawer> {
                             color: Colors.blue,
                           ),
                           SizedBox(width: 10),
-                          Text(
-                            "Logout",
-                            style: TextStyle(color: Colors.blue),
+                          TextButton(
+                            onPressed: () {
+                              Navigator.pushNamed(
+                                  context, SignInScreen.routeName);
+                            },
+                            child: Text(
+                              "Logout",
+                              style: TextStyle(color: Colors.blue),
+                            ),
                           ),
                         ],
                       ),
