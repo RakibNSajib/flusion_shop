@@ -30,16 +30,21 @@ class ColorDots extends StatelessWidget {
             ),
           ),
           Spacer(),
-          RoundedIconBtn(
-            icon: Icons.remove,
-            press: () {},
-          ),
-          SizedBox(width: getProportionateScreenWidth(20)),
-          RoundedIconBtn(
-            icon: Icons.add,
-            showShadow: true,
-            press: () {},
-          ),
+          Text('\$${product.price}',
+              style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black)),
+          // RoundedIconBtn(
+          //   icon: Icons.remove,
+          //   press: () {},
+          // ),
+          // SizedBox(width: getProportionateScreenWidth(20)),
+          // RoundedIconBtn(
+          //   icon: Icons.add,
+          //   showShadow: true,
+          //   press: () {},
+          // ),
         ],
       ),
     );
