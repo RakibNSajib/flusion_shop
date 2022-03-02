@@ -37,6 +37,7 @@ dependencies:
   animate_do: ^2.1.0
   firebase_core: ^1.13.1
   cloud_firestore: ^3.1.10
+  flutter_launcher_icons: ^0.8.1
 
 dev_dependencies:
   flutter_test:
@@ -81,3 +82,6 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+flutter_icons:
+  android: "launcher_icon"
+  image_path: "assets/images/lgicon.png"
