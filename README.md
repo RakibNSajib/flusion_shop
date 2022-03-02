@@ -2,8 +2,8 @@
 
 ## Login
 
-Email: demo@mail.com
-Password: 123456
+- Email: demo@mail.com
+- Password: 123456
 
 ## Screens it contains:
 
